@@ -1,4 +1,3 @@
-import * as React from "react"
 import { Moon, Sun } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
@@ -9,7 +8,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 
-import { useTheme } from "@/components/theme-provider" // <- use seu próprio hook!
+import { useTheme } from "@/components/theme/theme-context" 
 
 export default function ModeToggle() {
   const { setTheme } = useTheme()

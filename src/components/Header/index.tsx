@@ -1,4 +1,4 @@
-import { X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import brazil from "../../assets/flags/brazil_flag.png"
 import usa from "../../assets/flags/usa_flag.png"
@@ -30,9 +30,9 @@ export default function Header() {
 
   return (
     <nav
-      className={`${
+      className={`sticky top-4 z-50 ${
         isMenuClosed ? "w-14" : "w-[768px]"
-      } h-20 bg-black m-auto mt-4 rounded-full transition-all duration-500 sticky`}
+      } h-20 bg-black mx-auto rounded-full transition-all duration-500`}
     >
       <ul
         className={`${
@@ -82,7 +82,9 @@ export default function Header() {
           }}
         >
           {isMenuClosed ? (
-            <div className="w-6 h-6 rounded-full bg-white transition-all duration-300" />
+            <button>
+              <Menu size={27}/>
+            </button>
           ) : (
             <button
               role="link"
