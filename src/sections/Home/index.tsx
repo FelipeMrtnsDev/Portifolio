@@ -38,7 +38,7 @@ export default function Home() {
           </div>
           {/* acima disso */}
         </div>
-        <div className="bg-black absolute bottom-0 px-8 pt-6 rounded-t-[90px]">
+        <div className="bg-black absolute bottom-0 px-8 pt-6 rounded-t-[90px] dark:border-x-2 dark:border-t-2">
           <div className="flex flex-col text-center items-center w-full h-full">
             <EyesFollower />
             <div className="flex gap-2 mb-2">

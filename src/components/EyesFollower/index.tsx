@@ -19,7 +19,7 @@ const Eye: React.FC = () => {
       const centerY = rect.top + rect.height / 2;
 
       const angle = Math.atan2(e.clientY - centerY, e.clientX - centerX);
-      const radius = 6; // movimento máximo
+      const radius = 6;
       const x = Math.cos(angle) * radius;
       const y = Math.sin(angle) * radius;
 

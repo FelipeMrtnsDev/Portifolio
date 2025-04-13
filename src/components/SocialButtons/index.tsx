@@ -1,4 +1,3 @@
-import React from "react";
 import { FaInstagram, FaGithub, FaLinkedin } from "react-icons/fa";
 
 const SocialMediaButtons = () => {
@@ -6,20 +5,23 @@ const SocialMediaButtons = () => {
     {
       icon: <FaInstagram className="text-2xl" />,
       name: "Instagram",
-      bgClass: "group-hover:bg-[#E1306C]", // Instagram
-      tooltipClass: "bg-[#E1306C]"
+      bgClass: "group-hover:bg-[#E1306C]", 
+      tooltipClass: "bg-[#E1306C]",
+      link: "https://www.instagram.com/felipesza._/"
     },
     {
       icon: <FaGithub className="text-2xl" />,
       name: "GitHub",
-      bgClass: "group-hover:bg-[#333]", // GitHub
-      tooltipClass: "bg-[#333]"
+      bgClass: "group-hover:bg-[#333]", 
+      tooltipClass: "bg-[#333]",
+      link: "https://github.com/FelipeMrtnsDev"
     },
     {
       icon: <FaLinkedin className="text-2xl" />,
       name: "LinkedIn",
-      bgClass: "group-hover:bg-[#0A66C2]", // LinkedIn atualizado
-      tooltipClass: "bg-[#0A66C2]"
+      bgClass: "group-hover:bg-[#0A66C2]", 
+      tooltipClass: "bg-[#0A66C2]",
+      link: "https://www.linkedin.com/in/felipe-martins-3250462a1/"
     },
   ];
 
@@ -27,7 +29,7 @@ const SocialMediaButtons = () => {
     <div className="w-full flex justify-center">
       <div className="flex">
         {buttons.map((button, index) => (
-          <div key={index} className="mx-5 text-center cursor-pointer flex flex-col items-center relative z-10 transition-all duration-400 ease-[cubic-bezier(0.68,-0.55,0.265,1.55)]">
+          <a target="_blank" href={button.link} key={index} className="mx-5 text-center cursor-pointer flex flex-col items-center relative z-10 transition-all duration-400 ease-[cubic-bezier(0.68,-0.55,0.265,1.55)]">
             <div className="group relative flex flex-col items-center no-underline">
               <div className="relative z-10">
                 <span className={`dark:bg-black h-14 w-14 flex items-center justify-center rounded-full shadow-md transition-all duration-400 ease-[cubic-bezier(0.68,-0.55,0.265,1.55)] bg-white border-2 border-black dark:border-white ${button.bgClass} group-hover:border-transparent`}>
@@ -41,7 +43,7 @@ const SocialMediaButtons = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </a>
         ))}
       </div>
     </div>
