@@ -6,6 +6,7 @@
   ],
   "compilerOptions": {
     "baseUrl": ".",
+    "types": ["swiper"],
     "paths": {
       "@/*": ["./src/*"]
     }

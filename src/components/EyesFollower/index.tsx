@@ -1,13 +1,10 @@
-import React, { useEffect, useRef, useState } from "react";
-
-interface Position {
-  x: number;
-  y: number;
-}
+import React, { useEffect, useRef } from "react";
 
 const Eye: React.FC = () => {
   const eyeRef = useRef<HTMLDivElement>(null);
-  const [position, setPosition] = useState<Position>({ x: 0, y: 0 });
+  const pupilRef = useRef<HTMLDivElement>(null);
+  const targetPosition = useRef({ x: 0, y: 0 });
+  const currentPosition = useRef({ x: 0, y: 0 });
 
   useEffect(() => {
     const moveEye = (e: MouseEvent) => {
@@ -20,13 +17,28 @@ const Eye: React.FC = () => {
 
       const angle = Math.atan2(e.clientY - centerY, e.clientX - centerX);
       const radius = 6;
-      const x = Math.cos(angle) * radius;
-      const y = Math.sin(angle) * radius;
+      targetPosition.current = {
+        x: Math.cos(angle) * radius,
+        y: Math.sin(angle) * radius,
+      };
+    };
 
-      setPosition({ x, y });
+    const animate = () => {
+      const pupil = pupilRef.current;
+      if (!pupil) return;
+
+      // Interpolação suave entre posição atual e alvo
+      currentPosition.current.x += (targetPosition.current.x - currentPosition.current.x) * 0.15;
+      currentPosition.current.y += (targetPosition.current.y - currentPosition.current.y) * 0.15;
+
+      pupil.style.transform = `translate(${currentPosition.current.x}px, ${currentPosition.current.y}px)`;
+
+      requestAnimationFrame(animate);
     };
 
     window.addEventListener("mousemove", moveEye);
+    animate(); // iniciar animação
+
     return () => window.removeEventListener("mousemove", moveEye);
   }, []);
 
@@ -36,8 +48,8 @@ const Eye: React.FC = () => {
       className="w-10 h-10 bg-white rounded-full border-2 border-black flex items-center justify-center mx-1"
     >
       <div
-        className="w-6 h-6 bg-black rounded-full transition-transform duration-75"
-        style={{ transform: `translate(${position.x}px, ${position.y}px)` }}
+        ref={pupilRef}
+        className="w-6 h-6 bg-black rounded-full"
       />
     </div>
   );
