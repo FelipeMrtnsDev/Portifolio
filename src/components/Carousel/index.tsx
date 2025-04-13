@@ -1,55 +1,58 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 
+
 import 'swiper/css';
 import 'swiper/css/effect-cards';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-import back from "../../assets/background/Abstract-full.png"
-import back2 from "../../assets/background/Default_Create_an_abstract_background_with_a_vibrant_orange_hu_0.jpg"
-import back3 from "../../assets/background/abstract-3d.png"
+import eplay from "../../assets/Projects/Screenshot_113.png"
+import Agendei from "../../assets/Projects/Screenshot_110.png"
 
 const Carousel = () => {
-  // Dados de exemplo - substitua pelos seus cards
   const cards = [
     {
       id: 1,
-      title: "Projeto 1",
-      description: "Descrição breve do projeto com detalhes importantes",
-      image: back,
-      tags: ["React", "Tailwind"]
+      title: "Eplay",
+      description: "Eplay é uma loja de jogos online desenvolvida para oferecer uma experiência de compra de jogos completa.",
+      image: eplay,
+      tags: ["React.js", "Redux", "Node.js"],
+      link: "https://eplay-one.vercel.app"
     },
     {
       id: 2,
-      title: "Projeto 2",
-      description: "Outro projeto incrível com tecnologias modernas",
-      image: back2,
-      tags: ["Next.js", "TypeScript"]
+      title: "Agendei",
+      description: "Agendei é um web site que oferece a eficiência e a experiência completa de agendamentos clinicos.",
+      image: Agendei,
+      tags: ["React.js", "Node.js", "TypeScript"],
+      link: "https://agendei.vercel.app"
     },
     {
       id: 3,
-      title: "Projeto 3",
-      description: "Solução inovadora para problemas complexos",
-      image: back3,
-      tags: ["Node.js", "MongoDB"]
+      title: "Eplay",
+      description: "Eplay é uma loja de jogos online desenvolvida para oferecer uma experiência de compra de jogos completa.",
+      image: eplay,
+      tags: ["React.js", "Redux", "Node.js"],
+      link: "https://eplay-one.vercel.app"
     },
     {
       id: 4,
-      title: "Projeto 3",
-      description: "Solução inovadora para problemas complexos",
-      image: back3,
-      tags: ["Node.js", "MongoDB"]
+      title: "Agendei",
+      description: "Agendei é um web site que oferece a eficiência e a experiência completa de agendamentos clinicos.",
+      image: Agendei,
+      tags: ["React.js", "Node.js", "TypeScript"],
+      link: "https://agendei.vercel.app"
     }
   ];
 
   return (
-    <div className="max-w-6xl mx-auto py-12 px-4">
+    <div className="max-w-7xl mx-auto py-12">
       <Swiper
         modules={[Navigation, Pagination]}
         navigation
         pagination={{ clickable: true }}
-        spaceBetween={40} // Aumente este valor para mais espaçamento
+        spaceBetween={30} 
         slidesPerView={3}
         centeredSlides={true}
         loop={true}
@@ -65,18 +68,18 @@ const Carousel = () => {
           },
           1024: {
             slidesPerView: 3,
-            spaceBetween: 40 // Espaçamento entre cards em desktop
+            spaceBetween: 40
           }
         }}
       >
         {cards.map((card) => (
           <SwiperSlide key={card.id}>
-            <div className="h-full bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-200 dark:border-gray-700 transition-all hover:shadow-xl hover:border-blue-400 mx-4"> {/* Adicione margem horizontal */}
+            <div className="h-full bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-200 dark:border-gray-700 transition-all hover:shadow-xl hover:border-orange-400 mx-4"> 
               <div className="h-48 overflow-hidden">
                 <img 
                   src={card.image} 
                   alt={card.title}
-                  className="w-full h-full object-cover transition-transform hover:scale-110 duration-300"
+                  className="w-full h-full object-fit transition-transform hover:scale-110 duration-300"
                 />
               </div>
               <div className="p-6">
@@ -90,14 +93,14 @@ const Carousel = () => {
                   {card.tags.map((tag) => (
                     <span 
                       key={tag}
-                      className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-100 text-sm rounded-full"
+                      className="px-3 py-1 bg-orange-100 dark:bg-blue-900 text-orange-800 dark:text-blue-100 text-sm rounded-full"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
-                <button className="mt-6 w-full py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg hover:opacity-90 transition-opacity">
-                  Ver Detalhes
+                <button className="mt-6 w-full py-2 bg-gradient-to-r from-orange-500 to-red-600 text-white rounded-lg hover:opacity-80 transition-opacity">
+                  <a target='_blank' href={card.link}>Ver Detalhes</a>
                 </button>
               </div>
             </div>

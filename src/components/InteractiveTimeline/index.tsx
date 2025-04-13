@@ -18,8 +18,8 @@ interface MilestoneItemProps {
 
 const MilestoneItem = ({ item, index, scrollXProgress, totalItems }: MilestoneItemProps) => {
   const opacity = useTransform(scrollXProgress, 
-    [(index - 0.5) / totalItems, index / totalItems, (index + 0.5) / totalItems],
-    [0.5, 1, 0.5]
+    [(index - 1) / totalItems, index / totalItems, (index) / totalItems],
+    [1, 1, 1]
   );
   
   const scale = useTransform(scrollXProgress, 
@@ -54,37 +54,37 @@ const InteractiveTimeline = () => {
   
   const milestones: Milestone[] = [
     {
-      year: "2018",
+      year: "2023",
       title: "Primeiras Linhas de Código",
       description: "Iniciei meus estudos com HTML/CSS",
       icon: "👨‍💻",
-      color: "from-orange-400 to-amber-500" // Gradiente laranja
+      color: "from-orange-400 to-amber-500"
     },
     {
-      year: "2020",
-      title: "Formação em ADS",
-      description: "Algoritmos e estrutura de dados",
+      year: "2024",
+      title: "Entrei pra faculdade de Engenharia de Software",
+      description: "Me apaixonei por programação",
       icon: "🎓",
       color: "from-amber-500 to-yellow-500"
     },
     {
-      year: "2021",
-      title: "Dev Front-end",
-      description: "Trabalhando com React",
-      icon: "💼",
-      color: "from-orange-500 to-red-500" 
-    },
-    {
-      year: "2023",
-      title: "Especialização UI/UX",
-      description: "Design e desenvolvimento",
+      year: "2024",
+      title: "Especialização em Desenvolvimento Web",
+      description: "Backend e Frontend",
       icon: "🎨",
       color: "from-yellow-500 to-orange-500" 
     },
     {
+      year: "2025",
+      title: "Trainee",
+      description: "Meu primeiro Trabalho como progamador",
+      icon: "💼",
+      color: "from-orange-500 to-red-500" 
+    },
+    {
       year: "Hoje",
       title: "Full-stack Developer",
-      description: "Next.js e Node",
+      description: "Me especializando cada vez mais!",
       icon: "🚀",
       color: "from-red-500 to-orange-500" 
     }
@@ -120,7 +120,7 @@ const InteractiveTimeline = () => {
           background: rgba(249, 115, 22, 0.1);
         }
         .hide-scrollbar::-webkit-scrollbar-thumb {
-          background-color: rgba(249, 115, 22, 0.5);
+          background-color: rgba(249, 115, 22, 0.8);
           border-radius: 20px;
         }
         .hide-scrollbar::-webkit-scrollbar-thumb:hover {
