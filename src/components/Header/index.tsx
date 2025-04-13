@@ -1,14 +1,13 @@
 import { Menu, X } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
-import brazil from "../../assets/flags/brazil_flag.png"
-import usa from "../../assets/flags/usa_flag.png"
+import { MdTranslate } from "react-icons/md";
 import ModeToggle from "../Buttons/mode-toggle";
 
 export default function Header() {
   const [active, setActive] = useState("");
-  const [language, setLanguage] = useState("portuguese")
   const [isMenuClosed, setIsMenuClosed] = useState(false);
   const savedActive = useRef("");
+  const [language, setLanguage] = useState("portuguese")
 
   useEffect(() => {
     if (!isMenuClosed) {
@@ -20,13 +19,9 @@ export default function Header() {
     }
   }, [isMenuClosed]);
 
-  const handleChangeLanguage = (language: string) => {
-    if(language === "portuguese") {
-      setLanguage("portuguese")
-    } else {
-      setLanguage("english")
-    }
-  }
+  const handleChangeLanguage = () => {
+    setLanguage(prev => prev === "portuguese" ? "english" : "portuguese");
+  };
 
   return (
     <nav
@@ -86,11 +81,8 @@ export default function Header() {
               <Menu size={27}/>
             </button>
           ) : (
-            <button
-              role="link"
-              className="relative bg-[linear-gradient(transparent,transparent),linear-gradient(#FF9500,#FF9500)] bg-[length:100%_2px,0_2px] bg-[position:100%_100%,0_100%] bg-no-repeat transition-[background-size] duration-300 hover:bg-[length:0_2px,100%_2px]"
-            >
-              <X  size={27}/>
+            <button className="hover:text-orange-500 transition-all duration-300">
+              <X size={27}/>
             </button>
           )}
         </li>
@@ -129,33 +121,20 @@ export default function Header() {
       </ul>
       {!isMenuClosed && (
         <div
-        className={`w-full flex justify-center transition-all duration-700 ease-in-out transform ${
-          isMenuClosed
-            ? "opacity-0 -translate-y-6 pointer-events-none"
-            : "opacity-100 translate-y-0 pointer-events-auto"
-        }`}
-      >
-        <div className="bg-black w-36 h-12 rounded-b-3xl flex justify-center gap-3">
-          <img
-            className={`mb-2 cursor-pointer transition-all duration-300 ${
-              language === "portuguese" && "border-orange-500 border-[2px] rounded-full"
-            }`}
-            src={brazil}
-            alt="brazil"
-            onClick={() => handleChangeLanguage("portuguese")}
-          />
-          <img
-            className={`mb-2 cursor-pointer transition-all duration-300 ${
-              language === "english" && "border-orange-500 border-[2px] rounded-full"
-            }`}
-            src={usa}
-            alt="usa"
-            onClick={() => handleChangeLanguage("english")}
-          />
+          className={`w-full flex justify-center transition-all duration-700 ease-in-out transform ${
+            isMenuClosed
+              ? "opacity-0 -translate-y-6 pointer-events-none"
+              : "opacity-100 translate-y-0 pointer-events-auto"
+          }`}
+        >
+          <div
+            className={"bg-black w-20 h-12 rounded-b-3xl flex justify-center gap-3 items-start"}
+          >
+            <MdTranslate onClick={handleChangeLanguage} className={`cursor-pointer ${language === "english" ? "text-orange-500" : "text-white"}`} size={35} />
+          </div>
         </div>
-      </div>
       )}
-      <button className="absolute top-3 right-[-80px] ">
+      <button className="absolute top-3 right-[-80px]">
         <ModeToggle />
       </button>
     </nav>
