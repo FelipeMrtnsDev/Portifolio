@@ -101,6 +101,7 @@
       "description": "Connect with me on social media or follow me to stay up to date with everything about me."
     },
     "toast": {
+      "pending": "Sending message...",
       "success": "Message sent successfully!",
       "error": "An error occurred. Please try again."
     }

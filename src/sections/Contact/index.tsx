@@ -18,19 +18,28 @@ export default function Contact() {
 
   const handleSubmitEmail = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    try {
-      const response = await axios.post("https://api-portifolio-ten.vercel.app/email/enviar", {
-        nome,
-        email,
-        message,
-        assunto,
-      });
   
+    const envioEmail = axios.post("https://api-portifolio-ten.vercel.app/email/enviar", {
+      nome,
+      email,
+      message,
+      assunto,
+    });
+  
+    toast.promise(
+      envioEmail,
+      {
+        pending: t("contact.toast.pending"),   
+        success: t("contact.toast.success"),   
+        error: t("contact.toast.error"),      
+      }
+    );
+  
+    try {
+      const response = await envioEmail;
       console.log("Resposta da API:", response.data);
-      toast.success(t("contact.toast.success")); 
     } catch (error) {
       console.error("Erro ao enviar:", error);
-      toast.error(t("contact.toast.error"));
     }
   };
 

@@ -101,8 +101,9 @@
       "description": "Se conecte a mim nas redes sociais ou me siga e fique por dentro de todas as novidades sobre mim."
     },
     "toast": {
+      "pending": "Enviando mensagem...",
       "success": "Mensagem enviada com sucesso!",
-      "error": "Ocorreu um erro ao enviar. Tente novamente."
+      "error": "Erro ao enviar a mensagem."
     }
   }
 }
