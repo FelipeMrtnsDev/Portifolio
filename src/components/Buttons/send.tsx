@@ -1,7 +1,7 @@
 const Send = () => {
   return (
     <div>
-      <button className="btn-5jD8wL">
+      <button type="submit" className="btn-5jD8wL">
         <div className="svg-wrapper-2k8VnR">
           <div className="svg-container-9LrZyP">
             <svg

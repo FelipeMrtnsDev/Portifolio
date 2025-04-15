@@ -74,7 +74,7 @@ const Carousel = () => {
       >
         {cards.map((card) => (
           <SwiperSlide key={card.id}>
-            <div className="h-full bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-200 dark:border-gray-700 transition-all hover:shadow-xl hover:border-orange-400 mx-4"> 
+            <div className="h-full bg-white dark:bg-black rounded-xl shadow-lg overflow-hidden border border-gray-200 dark:border-gray-700 transition-all hover:shadow-xl hover:border-orange-400 mx-4"> 
               <div className="h-48 overflow-hidden">
                 <img 
                   src={card.image} 

@@ -42,7 +42,7 @@ export default function Skills() {
       
     },
     {
-      title: "Chat e Fórum",
+      title: "Design ui/ux",
       content: "Planejo e desenvolvo interfaces com foco em experiência do usuário. Utilizo princípios de design intuitivo, arquitetura de informação e prototipagem rápida para entregar soluções funcionais e esteticamente atraentes.",
       icon: ImMagicWand,
       languages: [
@@ -57,19 +57,18 @@ export default function Skills() {
   return (
     <section className="w-full min-h-screen h-full flex flex-col items-center">
       <div className="max-w-5xl w-full px-3">
-        <div className="mt-16 flex items-center gap-4">
+        <div data-aos="fade-left" className="mt-16 flex items-center gap-4">
           <span className="font-semibold bg-orange-500 p-1 px-2 rounded-full text-sm text-white">Habilidades</span>
           <hr className="flex-1 h-[2px] bg-gray-800 border-0 rounded" />
         </div>
 
-        <div>
+        <div data-aos="fade-left">
           <h2 className="text-4xl mt-4 mb-6">
             Como posso auxiliar com minhas <span className="text-orange-500">habilidades</span>
           </h2>
         </div>
-      
         <div className="flex flex-col w-full justify-center">
-          <div className="grid grid-cols-[60%_40%] gap-6 max-w-7xl mb-8">
+          <div data-aos="fade-left" className="grid grid-cols-[60%_40%] gap-6 max-w-7xl mb-8">
             {ContentsCardRight.map((content) => {
               const Icon = content.icon;
               return (
@@ -95,7 +94,7 @@ export default function Skills() {
               );
             })}
           </div>
-          <div className="grid grid-cols-[40%_60%] gap-6 max-w-7xl mb-12">
+          <div data-aos="fade-right" className="grid grid-cols-[40%_60%] gap-6 max-w-7xl mb-12">
             {ContentsCardLeft.map((content) => {
               const Icon = content.icon;
               return (
@@ -123,7 +122,7 @@ export default function Skills() {
           </div>
         </div>
       </div>
-      <InfiniteScrollCarousel />
+        <InfiniteScrollCarousel />
     </section>
   );
 }

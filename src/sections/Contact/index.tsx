@@ -4,35 +4,58 @@ import { Github } from "@/components/SocialMedia/Github";
 import { Linkedin } from "@/components/SocialMedia/Linkedin";
 import { Instagram } from "@/components/SocialMedia/Instagram";
 import { TextareaWithLabel } from "@/components/TextAreaWithLabel";
+import axios from "axios"
+import { useState } from "react";
 
 export default function Contact() {
+  const [nome, setNome] = useState("")
+  const [email, setEmail] = useState("")
+  const [message, setMessage] = useState("")
+  const [assunto, setAssunto] = useState("")
+
+  const handleSubmitEmail = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    try {
+      const response = await axios.post("https://api-portifolio-ten.vercel.app", {
+        nome,
+        email,
+        message,
+        assunto
+      });
+  
+      console.log("Resposta da API:", response.data);
+    } catch (error) {
+      console.error("Erro ao enviar:", error);
+    }
+  };
+
   return (
-    <section className="w-full min-h-screen h-full flex flex-col">
-      <div className="mb-11 flex justify-center">
+    <section className="w-full h-full flex flex-col mb-20">
+      <div data-aos="fade-up" className="mb-11 flex justify-center">
         <h2 className="text-4xl font-bold"><span className="text-orange-500">Fale</span> comigo</h2>
       </div>
       <h3 className="text-2xl px-16 mb-4">Me envie uma mensagem</h3>
-      <form className="px-16 flex gap-6">
-        <div className="border w-full h-[600px] flex flex-col rounded-xl p-8 gap-4">
+      <form className="px-16 flex gap-6" onSubmit={handleSubmitEmail}>
+        <div data-aos="fade-right" className="border w-full h-[600px] flex flex-col rounded-xl p-8 gap-4">
           <div className="flex w-full gap-4">
             <div className="flex flex-col w-1/2">
-              <InputWithLabel label="Nome" />
+              <InputWithLabel id="nome" htmlFor="nome" placeholder="Nome" type="text" onChange={(e) => setNome(e.target.value)} label="Nome" />
             </div>
             <div className="flex flex-col w-1/2">
-              <InputWithLabel label="Email" />
+              <InputWithLabel id="email" htmlFor="email" placeholder="Email" type="email" onChange={(e) => setEmail(e.target.value)} label="Email" />
             </div>
           </div>
           <div className="flex w-full">
             <div className="flex flex-col w-full mb-4">
-              <InputWithLabel label="Assunto" />
+              <InputWithLabel id="assunto" htmlFor="assunto" placeholder="Assunto" type="text" onChange={(e) => setAssunto(e.target.value)} label="Assunto" />
             </div>
           </div>
           <div className="w-full h-full flex justify-center flex-col -mt-4 relative">
-            <TextareaWithLabel />
+            <TextareaWithLabel onChange={(e) => setMessage(e.target.value)} />
             <Send />
           </div>
         </div>
-        <div className="w-1/2 rounded-xl flex flex-col gap-4">
+        <div data-aos="fade-left" className="w-1/2 rounded-xl flex flex-col gap-4">
           <div className="border rounded-xl p-4">
             <h4 className="text-xl mb-4">Informações de contato</h4>
             <p className="mb-2">Se conecte a mim nas redes sociais ou me siga e fique por dentro de todas as novidades sobre mim.</p>

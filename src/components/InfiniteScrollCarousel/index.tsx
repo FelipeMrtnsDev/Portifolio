@@ -24,7 +24,7 @@ const InfiniteScrollCarousel = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className="relative w-full overflow-hidden py-8 md:py-12">
+    <div data-aos="fade-up" className="relative w-full overflow-hidden py-8 md:py-12">
       <motion.div
         ref={containerRef}
         className="flex gap-8 md:gap-12 w-max"

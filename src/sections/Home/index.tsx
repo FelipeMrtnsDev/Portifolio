@@ -11,13 +11,13 @@ export default function Home() {
     >
       <div className="w-full h-full absolute flex justify-center">
         <div className="w-full h-full max-w-5xl">
-          <div className="mt-44 text-center">
+          <div className="mt-44 text-center" data-aos="fade-down">
             <span className="border-[2px] border-black dark:border-white rounded-full p-2 px-6 text-black font-bold hover:bg-orange-500 hover:text-[#fff] transition-all duration-500 cursor-pointer dark:text-white">
               Hello world! 
             </span>
           </div>
           <div className="flex mt-12 justify-between items-center">
-            <div className="text-4xl text-black flex flex-col text-center gap-2 font-semibold max-w-[500px] w-full">
+            <div data-aos="fade-right" className="text-4xl text-black flex flex-col text-center gap-2 font-semibold max-w-[500px] w-full">
               <h2 className="dark:text-white">Ola, eu sou o</h2>
               <div className="relative w-full mx-auto">
                 <div className="text-7xl font-bold bg-gradient-to-r from-orange-600 via-orange-500 to-orange-400 bg-clip-text text-transparent drop-shadow-md">
@@ -27,7 +27,7 @@ export default function Home() {
               <h2 className="dark:text-white">--Desenvolvedor full stack--</h2>
               <SocialButtons />
             </div>
-            <div>
+            <div data-aos="fade-left">
               <img
                 style={{ borderRadius: "60px 150px 50px 200px" }}
                 src={Me}
