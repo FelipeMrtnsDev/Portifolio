@@ -25,7 +25,7 @@ const Send = () => {
       <style>{`
         .btn-5jD8wL {
           font-family: inherit;
-          font-size: 20px;
+          font-size: 18px;
           background: #fc5c00;
           color: white;
           padding: 10px;

@@ -75,7 +75,7 @@ export default function Skills() {
               return (
                 <div key={content.title} className="relative w-full h-full group">
                   <div className="absolute bg-orange-500 inset-0 rounded-lg z-0 transition-shadow duration-300 group-hover:shadow-[0_2px_10px_rgba(255, 102, 0, 0.4)]" />
-                  <div className="relative hover:bg-[#faf3ef] z-10 px-6 border flex flex-col p-8 border-slate-300 dark:border-slate-500 bg-white dark:bg-slate-800 w-full h-full rounded-lg duration-300 group-hover:-translate-y-2">
+                  <div className="relative hover:bg-[#faf3ef] z-10 px-6 border flex flex-col p-8 border-slate-300 dark:border-slate-800 bg-white dark:bg-black w-full h-full rounded-lg duration-300 group-hover:-translate-y-2">
                     <div className="flex justify-center items-center border w-16 h-16 rounded-xl dark:bg-slate-600 text-white text-3xl mb-2">
                       <Icon className="text-black dark:text-white" size={25}/>
                     </div>
@@ -85,7 +85,7 @@ export default function Skills() {
                     </div>
                     <div className="flex gap-2">
                     {content.languages?.map((language, index) => (
-                        <span key={index} className="bg-orange-100 dark:bg-blue-900 p-1 px-3 text-orange-800 dark:text-white rounded-full text-sm">
+                        <span key={index} className="bg-orange-100 dark:bg-slate-900 p-1 px-3 text-orange-800 dark:text-white rounded-full text-sm">
                           {language}
                         </span>
                       ))}
@@ -101,7 +101,7 @@ export default function Skills() {
               return (
                 <div key={content.title} className="relative w-full h-full group">
                   <div className="absolute bg-orange-500 inset-0 rounded-lg z-0 transition-shadow duration-300 group-hover:shadow-[0_2px_5px_rgba(255, 125, 38, 0.4)]" />
-                  <div className="relative hover:bg-[#faf3ef] z-10 px-6 border flex flex-col p-8 border-slate-300 dark:border-slate-500 bg-white dark:bg-slate-800 w-full h-full rounded-lg duration-300 group-hover:-translate-y-2">
+                  <div className="relative hover:bg-[#faf3ef] z-10 px-6 border flex flex-col p-8 border-slate-300 dark:border-slate-800 bg-white dark:bg-black w-full h-full rounded-lg duration-300 group-hover:-translate-y-2">
                     <div className="flex justify-center items-center border w-16 h-16 rounded-xl dark:bg-slate-600 text-white text-3xl mb-2">
                       <Icon className="text-black dark:text-white" size={25}/>
                     </div>
@@ -111,7 +111,7 @@ export default function Skills() {
                     </div>
                     <div className="flex gap-2">
                     {content.languages?.map((language, index) => (
-                        <span key={index} className="bg-orange-100 dark:bg-blue-900 p-1 px-3 text-orange-800 dark:text-white rounded-full text-sm">
+                        <span key={index} className="bg-orange-100 dark:bg-slate-900 p-1 px-3 text-orange-800 dark:text-white rounded-full text-sm">
                           {language}
                         </span>
                       ))}

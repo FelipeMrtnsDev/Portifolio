@@ -1,8 +1,9 @@
-import Input from "@/components/Input";
+import InputWithLabel from "@/components/InputWithLabel";
 import Send from "@/components/Buttons/send";
 import { Github } from "@/components/SocialMedia/Github";
 import { Linkedin } from "@/components/SocialMedia/Linkedin";
 import { Instagram } from "@/components/SocialMedia/Instagram";
+import { TextareaWithLabel } from "@/components/TextAreaWithLabel";
 
 export default function Contact() {
   return (
@@ -12,30 +13,27 @@ export default function Contact() {
       </div>
       <h3 className="text-2xl px-16 mb-4">Me envie uma mensagem</h3>
       <form className="px-16 flex gap-6">
-        <div className="border w-full h-[746px] flex flex-col rounded-xl p-8 gap-4">
+        <div className="border w-full h-[600px] flex flex-col rounded-xl p-8 gap-4">
           <div className="flex w-full gap-4">
-            <label className="flex flex-col w-1/2">
-              <p>Nome</p>
-              <Input placeholder="Nome" />
-            </label>
-            <label className="flex flex-col w-1/2">
-              <p>Email</p>
-              <Input placeholder="Email" />
-            </label>
+            <div className="flex flex-col w-1/2">
+              <InputWithLabel label="Nome" />
+            </div>
+            <div className="flex flex-col w-1/2">
+              <InputWithLabel label="Email" />
+            </div>
           </div>
           <div className="flex w-full">
-            <label className="flex flex-col w-full mb-4">
-              <p>Assunto</p>
-              <Input placeholder="Assunto" />
-            </label>
+            <div className="flex flex-col w-full mb-4">
+              <InputWithLabel label="Assunto" />
+            </div>
           </div>
-          <div className="w-full h-full flex justify-center flex-col gap-4 relative">
-            <textarea className="w-full h-full resize-none border-2 bg-[#252525] rounded-xl p-4 focus-visible:outline-none" placeholder="Escreva aqui..." ></textarea>
+          <div className="w-full h-full flex justify-center flex-col -mt-4 relative">
+            <TextareaWithLabel />
             <Send />
           </div>
         </div>
         <div className="w-1/2 rounded-xl flex flex-col gap-4">
-          <div className="border h-2/5 rounded-xl p-4">
+          <div className="border rounded-xl p-4">
             <h4 className="text-xl mb-4">Informações de contato</h4>
             <p className="mb-2">Se conecte a mim nas redes sociais ou me siga e fique por dentro de todas as novidades sobre mim.</p>
             <div className="flex flex-col gap-2">
