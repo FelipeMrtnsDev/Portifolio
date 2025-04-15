@@ -1,5 +1,6 @@
 import { motion, MotionValue, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import { useTranslation } from "react-i18next";
 
 interface Milestone {
   year: string;
@@ -51,44 +52,46 @@ const MilestoneItem = ({ item, index, scrollXProgress, totalItems }: MilestoneIt
 const InteractiveTimeline = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollXProgress } = useScroll({ container: containerRef });
-  
+  const { t } = useTranslation();
+
   const milestones: Milestone[] = [
     {
       year: "2023",
-      title: "Primeiras Linhas de Código",
-      description: "Iniciei meus estudos com HTML/CSS",
+      title: t("timeline.2023.title"),
+      description: t("timeline.2023.description"),
       icon: "👨‍💻",
       color: "from-orange-400 to-amber-500"
     },
     {
       year: "2024",
-      title: "Entrei pra faculdade de Engenharia de Software",
-      description: "Me apaixonei por programação",
+      title: t("timeline.2024_1.title"),
+      description: t("timeline.2024_1.description"),
       icon: "🎓",
       color: "from-amber-500 to-yellow-500"
     },
     {
       year: "2024",
-      title: "Especialização em Desenvolvimento Web",
-      description: "Backend e Frontend",
+      title: t("timeline.2024_2.title"),
+      description: t("timeline.2024_2.description"),
       icon: "🎨",
-      color: "from-yellow-500 to-orange-500" 
+      color: "from-yellow-500 to-orange-500"
     },
     {
       year: "2025",
-      title: "Trainee",
-      description: "Meu primeiro Trabalho como progamador",
+      title: t("timeline.2025.title"),
+      description: t("timeline.2025.description"),
       icon: "💼",
-      color: "from-orange-500 to-red-500" 
+      color: "from-orange-500 to-red-500"
     },
     {
-      year: "Hoje",
-      title: "Full-stack Developer",
-      description: "Me especializando cada vez mais!",
+      year: t("timeline.present.year"),
+      title: t("timeline.present.title"),
+      description: t("timeline.present.description"),
       icon: "🚀",
-      color: "from-red-500 to-orange-500" 
+      color: "from-red-500 to-orange-500"
     }
   ];
+
 
   return (
     <div className="relative h-[400px] mt-20">
@@ -110,7 +113,7 @@ const InteractiveTimeline = () => {
         ))}
       </div>
       <div className="absolute mt-8 left-0 right-0 text-center text-sm text-orange-600 dark:text-orange-600 animate-bounce">
-        ← Arraste para explorar minha jornada →
+        {t("timeline.hint")}
       </div>
       <style>{`
         .hide-scrollbar::-webkit-scrollbar {

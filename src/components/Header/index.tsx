@@ -2,12 +2,13 @@ import { Menu, X } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import { MdTranslate } from "react-icons/md";
 import ModeToggle from "../Buttons/mode-toggle";
+import { useTranslation } from "react-i18next";
 
 export default function Header() {
+  const { t, i18n } = useTranslation();
   const [active, setActive] = useState("");
   const [isMenuClosed, setIsMenuClosed] = useState(false);
   const savedActive = useRef("");
-  const [language, setLanguage] = useState("portuguese")
 
   useEffect(() => {
     if (!isMenuClosed) {
@@ -20,7 +21,45 @@ export default function Header() {
   }, [isMenuClosed]);
 
   const handleChangeLanguage = () => {
-    setLanguage(prev => prev === "portuguese" ? "english" : "portuguese");
+    const newLang = i18n.language === "pt" ? "en" : "pt";
+    i18n.changeLanguage(newLang);
+  };
+
+  useEffect(() => {
+    const sections = ["sobre", "projetos", "habilidades", "contato"];
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActive(
+              entry.target.id.charAt(0).toUpperCase() + entry.target.id.slice(1)
+            );
+          }
+        });
+      },
+      {
+        threshold: 0.5,
+      }
+    );
+
+    sections.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => {
+      sections.forEach((id) => {
+        const el = document.getElementById(id);
+        if (el) observer.unobserve(el);
+      });
+    };
+  }, []);
+
+  const scrollToSection = (id: string) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
@@ -37,7 +76,7 @@ export default function Header() {
         {!isMenuClosed && (
           <>
             <li
-              onClick={() => setActive("Sobre")}
+              onClick={() => scrollToSection("sobre")}
               className={`py-6 w-32 flex text-center cursor-pointer rounded-full transition-colors duration-300 ${
                 active === "Sobre" ? "bg-orange-500" : ""
               }`}
@@ -47,11 +86,11 @@ export default function Header() {
                   isMenuClosed ? "opacity-0" : "opacity-100"
                 }`}
               >
-                Sobre
+                {t("menu.about")}
               </span>
             </li>
             <li
-              onClick={() => setActive("Projetos")}
+              onClick={() => scrollToSection("projetos")}
               className={`py-6 w-32 flex text-center cursor-pointer rounded-full transition-colors duration-300 ${
                 active === "Projetos" ? "bg-orange-500" : ""
               }`}
@@ -61,7 +100,7 @@ export default function Header() {
                   isMenuClosed ? "opacity-0" : "opacity-100"
                 }`}
               >
-                Projetos
+                {t("menu.projects")}
               </span>
             </li>
           </>
@@ -78,18 +117,18 @@ export default function Header() {
         >
           {isMenuClosed ? (
             <button>
-              <Menu size={27}/>
+              <Menu size={27} />
             </button>
           ) : (
             <button className="hover:text-orange-500 transition-all duration-300">
-              <X size={27}/>
+              <X size={27} />
             </button>
           )}
         </li>
         {!isMenuClosed && (
           <>
             <li
-              onClick={() => setActive("Habilidades")}
+              onClick={() => scrollToSection("habilidades")}
               className={`py-6 w-32 flex text-center cursor-pointer rounded-full transition-colors duration-300 ${
                 active === "Habilidades" ? "bg-orange-500" : ""
               }`}
@@ -99,11 +138,11 @@ export default function Header() {
                   isMenuClosed ? "opacity-0" : "opacity-100"
                 }`}
               >
-                Habilidades
+                {t("menu.skills")}
               </span>
             </li>
             <li
-              onClick={() => setActive("Contato")}
+              onClick={() => scrollToSection("contato")}
               className={`py-6 w-32 flex text-center cursor-pointer rounded-full transition-colors duration-300 ${
                 active === "Contato" ? "bg-orange-500" : ""
               }`}
@@ -113,7 +152,7 @@ export default function Header() {
                   isMenuClosed ? "opacity-0" : "opacity-100"
                 }`}
               >
-                Contato
+                {t("menu.contact")}
               </span>
             </li>
           </>
@@ -127,10 +166,14 @@ export default function Header() {
               : "opacity-100 translate-y-0 pointer-events-auto"
           }`}
         >
-          <div
-            className={"bg-black w-20 h-12 rounded-b-3xl flex justify-center gap-3 items-start"}
-          >
-            <MdTranslate onClick={handleChangeLanguage} className={`cursor-pointer ${language === "english" ? "text-orange-500" : "text-white"}`} size={35} />
+          <div className="bg-black w-20 h-12 rounded-b-3xl flex justify-center gap-3 items-start">
+            <MdTranslate
+              onClick={handleChangeLanguage}
+              className={`cursor-pointer ${
+                i18n.language === "en" ? "text-orange-500" : "text-white"
+              }`}
+              size={35}
+            />
           </div>
         </div>
       )}

@@ -1,21 +1,23 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
-
+import { useTranslation } from "react-i18next";
 
 import 'swiper/css';
 import 'swiper/css/effect-cards';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-import eplay from "../../assets/Projects/Screenshot_113.png"
-import Agendei from "../../assets/Projects/Screenshot_110.png"
+import eplay from "../../assets/Projects/Screenshot_113.png";
+import Agendei from "../../assets/Projects/Screenshot_110.png";
 
 const Carousel = () => {
+  const { t } = useTranslation();
+
   const cards = [
     {
       id: 1,
       title: "Eplay",
-      description: "Eplay é uma loja de jogos online desenvolvida para oferecer uma experiência de compra de jogos completa.",
+      description: t("carousel.eplay.description"),
       image: eplay,
       tags: ["React.js", "Redux", "Node.js"],
       link: "https://eplay-one.vercel.app"
@@ -23,7 +25,7 @@ const Carousel = () => {
     {
       id: 2,
       title: "Agendei",
-      description: "Agendei é um web site que oferece a eficiência e a experiência completa de agendamentos clinicos.",
+      description: t("carousel.agendei.description"),
       image: Agendei,
       tags: ["React.js", "Node.js", "TypeScript"],
       link: "https://agendei.vercel.app"
@@ -31,7 +33,7 @@ const Carousel = () => {
     {
       id: 3,
       title: "Eplay",
-      description: "Eplay é uma loja de jogos online desenvolvida para oferecer uma experiência de compra de jogos completa.",
+      description: t("carousel.eplay.description"),
       image: eplay,
       tags: ["React.js", "Redux", "Node.js"],
       link: "https://eplay-one.vercel.app"
@@ -39,7 +41,7 @@ const Carousel = () => {
     {
       id: 4,
       title: "Agendei",
-      description: "Agendei é um web site que oferece a eficiência e a experiência completa de agendamentos clinicos.",
+      description: t("carousel.agendei.description"),
       image: Agendei,
       tags: ["React.js", "Node.js", "TypeScript"],
       link: "https://agendei.vercel.app"
@@ -100,7 +102,7 @@ const Carousel = () => {
                   ))}
                 </div>
                 <button className="mt-6 w-full py-2 bg-gradient-to-r from-orange-500 to-red-600 text-white rounded-lg hover:opacity-80 transition-opacity">
-                  <a target='_blank' href={card.link}>Ver Detalhes</a>
+                  <a target='_blank' href={card.link}>{t("carousel.button")}</a>
                 </button>
               </div>
             </div>

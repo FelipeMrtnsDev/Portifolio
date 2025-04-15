@@ -1,0 +1,108 @@
+{
+  "menu": {
+    "about": "About",
+    "projects": "Projects",
+    "skills": "Skills",
+    "contact": "Contact"
+  },
+  "home": {
+    "hello": "Hello world!",
+    "greeting": "Hi, I am",
+    "role": "--Full stack developer--",
+    "scrollDown": "See below"
+  },
+  "about": {
+    "tag": "About me",
+    "title": {
+      "part1": "Everything you need to know",
+      "part2": "about",
+      "part3": "me"
+    },
+    "description": "Full Stack Developer focused on Next.js, React, TypeScript and React Native. I have experience creating RESTful APIs using Node.js, Express and MySQL. I like to understand how things work behind the scenes and I tend to learn a lot while getting hands-on. I enjoy working with technology because there's always something new to discover and test. I study Software Engineering at FAMETRO – Faculdade Metropolitana de Manaus.",
+    "name": "Felipe Martins de Souza",
+    "profession": "Software Engineer",
+    "age": "20 years old",
+    "level": "Junior"
+  },
+  "timeline": {
+    "2023": {
+      "title": "First Lines of Code",
+      "description": "Started learning HTML/CSS"
+    },
+    "2024_1": {
+      "title": "Started Software Engineering College",
+      "description": "Fell in love with programming"
+    },
+    "2024_2": {
+      "title": "Web Development Specialization",
+      "description": "Backend and Frontend"
+    },
+    "2025": {
+      "title": "Trainee",
+      "description": "My first job as a developer"
+    },
+    "present": {
+      "year": "Today",
+      "title": "Full-stack Developer",
+      "description": "Getting more and more specialized!"
+    },
+    "hint": "← Drag to explore my journey →"
+  },
+    "projects": {
+      "badge": "Projects",
+      "title": {
+        "before": "My",
+        "highlight": "projects",
+        "after": "latest"
+      }
+    },
+    "carousel": {
+    "eplay": {
+      "description": "Eplay is an online game store developed to offer a complete and a great game shopping experience."
+    },
+    "agendei": {
+      "description": "Agendei is a website that offers the efficiency and full experience of clinical appointments."
+    },
+    "button": "View Details"
+  },
+  "skills": {
+    "label": "Skills",
+    "title": "How I can help with my",
+    "highlight": "skills",
+    "web": {
+      "title": "Web Development",
+      "content": "I build modern, responsive and SEO-optimized interfaces, ensuring performance, accessibility and a great user experience. I integrate APIs, adapt designs to various devices and apply front-end best practices."
+    },
+    "backend": {
+      "title": "Backend & APIs",
+      "content": "I develop secure and efficient APIs with authentication and database integration. I structure routes, business logic and scalable architecture using best practices."
+    },
+    "mobile": {
+      "title": "Mobile Development",
+      "content": "I build functional and responsive mobile apps with React Native and API integration. Focused on performance, usability and cross-platform compatibility."
+    },
+    "design": {
+      "title": "UI/UX Design",
+      "content": "I plan and develop interfaces focused on user experience. I use intuitive design principles, information architecture and rapid prototyping to deliver functional and aesthetically appealing solutions."
+    }
+  },
+  "contact": {
+    "titleHighlight": "Talk",
+    "title": "to me",
+    "subtitle": "Send me a message",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message"
+    },
+    "info": {
+      "title": "Contact information",
+      "description": "Connect with me on social media or follow me to stay up to date with everything about me."
+    },
+    "toast": {
+      "success": "Message sent successfully!",
+      "error": "An error occurred. Please try again."
+    }
+  }
+}

@@ -9,13 +9,14 @@ type Props = {
   type: string;
   id: string;
   placeholder: string;
+  required: boolean
 };
 
-export default function InputWithLabel({ label, onChange, htmlFor, type, id, placeholder }: Props) {
+export default function InputWithLabel({ label, onChange, htmlFor, type, id, placeholder, required }: Props) {
   return (
     <div className="grid w-full items-center gap-1.5">
       <Label htmlFor={htmlFor}>{label}</Label>
-      <Input type={type} id={id} placeholder={placeholder} onChange={onChange} />
+      <Input required={required} type={type} id={id} placeholder={placeholder} onChange={onChange} />
     </div>
   );
 }

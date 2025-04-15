@@ -1,30 +1,34 @@
 import TypingEffect from "@/components/TypingEffect";
-import Me from "../../assets/Me/m7.png"
+import Me from "../../assets/Me/m7.png";
 import SocialButtons from "@/components/SocialButtons";
 import { ArrowDown } from "lucide-react";
 import EyesFollower from "@/components/EyesFollower";
+import { useTranslation } from "react-i18next";
 
 export default function Home() {
+  const { t } = useTranslation();
+
   return (
-    <section
-      className="bg-cover bg-center bg-no-repeat w-full min-h-screen text-white -mt-44 relative"
-    >
+    <section className="bg-cover bg-center bg-no-repeat w-full min-h-screen text-white -mt-44 relative">
       <div className="w-full h-full absolute flex justify-center">
         <div className="w-full h-full max-w-5xl">
           <div className="mt-44 text-center" data-aos="fade-down">
             <span className="border-[2px] border-black dark:border-white rounded-full p-2 px-6 text-black font-bold hover:bg-orange-500 hover:text-[#fff] transition-all duration-500 cursor-pointer dark:text-white">
-              Hello world! 
+              {t("home.hello")}
             </span>
           </div>
           <div className="flex mt-12 justify-between items-center">
-            <div data-aos="fade-right" className="text-4xl text-black flex flex-col text-center gap-2 font-semibold max-w-[500px] w-full">
-              <h2 className="dark:text-white">Ola, eu sou o</h2>
+            <div
+              data-aos="fade-right"
+              className="text-4xl text-black flex flex-col text-center gap-2 font-semibold max-w-[500px] w-full"
+            >
+              <h2 className="dark:text-white">{t("home.greeting")}</h2>
               <div className="relative w-full mx-auto">
                 <div className="text-7xl font-bold bg-gradient-to-r from-orange-600 via-orange-500 to-orange-400 bg-clip-text text-transparent drop-shadow-md">
                   <TypingEffect />
                 </div>
               </div>
-              <h2 className="dark:text-white">--Desenvolvedor full stack--</h2>
+              <h2 className="dark:text-white">{t("home.role")}</h2>
               <SocialButtons />
             </div>
             <div data-aos="fade-left">
@@ -40,7 +44,7 @@ export default function Home() {
           <div className="flex flex-col text-center items-center w-full h-full">
             <EyesFollower />
             <div className="flex gap-2 mb-2">
-              <span className="text-2xl">Veja abaixo</span>
+              <span className="text-2xl">{t("home.scrollDown")}</span>
               <ArrowDown size={30} />
             </div>
           </div>
