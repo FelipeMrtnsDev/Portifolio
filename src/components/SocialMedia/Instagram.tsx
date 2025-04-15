@@ -1,6 +1,6 @@
 export function Instagram() {
   return (
-    <a className="relative border select-none cursor-pointer flex items-center justify-center w-12 h-12 bg-[#E1306C] text-white font-bold rounded-xl transition-all duration-300 ease-in-out group overflow-hidden hover:w-36">
+    <a target="_blank" href="https://www.instagram.com/felipesza._/" className="relative border select-none cursor-pointer flex items-center justify-center w-12 h-12 bg-[#E1306C] text-white font-bold rounded-xl transition-all duration-300 ease-in-out group overflow-hidden hover:w-36">
       <svg
         className="absolute transition-transform duration-300 ease-in-out group-hover:-translate-x-12"
         xmlns="http://www.w3.org/2000/svg"

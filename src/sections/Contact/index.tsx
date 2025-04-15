@@ -19,7 +19,7 @@ export default function Contact() {
   const handleSubmitEmail = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const response = await axios.post("https://api-portifolio-ten.vercel.app", {
+      const response = await axios.post("https://api-portifolio-ten.vercel.app/email/enviar", {
         nome,
         email,
         message,
