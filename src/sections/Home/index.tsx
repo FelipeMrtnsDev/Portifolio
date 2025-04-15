@@ -11,7 +11,6 @@ export default function Home() {
     >
       <div className="w-full h-full absolute flex justify-center">
         <div className="w-full h-full max-w-5xl">
-          {/* abaixo disso */}
           <div className="mt-44 text-center">
             <span className="border-[2px] border-black dark:border-white rounded-full p-2 px-6 text-black font-bold hover:bg-orange-500 hover:text-[#fff] transition-all duration-500 cursor-pointer dark:text-white">
               Hello world! 
@@ -36,7 +35,6 @@ export default function Home() {
               />
             </div>
           </div>
-          {/* acima disso */}
         </div>
         <div className="bg-black absolute bottom-0 px-8 pt-6 rounded-t-[90px] dark:border-x-2 dark:border-t-2">
           <div className="flex flex-col text-center items-center w-full h-full">
