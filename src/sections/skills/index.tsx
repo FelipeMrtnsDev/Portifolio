@@ -55,7 +55,7 @@ export default function Skills() {
         </div>
 
         <div className="flex flex-col w-full justify-center">
-          <div data-aos="fade-left" className="grid grid-cols-1 lg:grid-cols-[40%_60%] gap-6 max-w-7xl mb-8 lg:mb-12">
+          <div data-aos="fade-left" className="grid grid-cols-1 lg:grid-cols-[60%_40%] flex flex-row-reverse gap-6 max-w-7xl mb-8 lg:mb-12">
             {ContentsCardRight.map((content) => {
               const Icon = content.icon;
               return (
