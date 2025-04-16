@@ -51,8 +51,8 @@ export default function Contact() {
         </h2>
       </div>
       <h3 className="text-2xl px-16 mb-4">{t("contact.subtitle")}</h3>
-      <form className="px-16 flex gap-6" onSubmit={handleSubmitEmail}>
-        <div data-aos="fade-right" className="border w-full h-[600px] flex flex-col rounded-xl p-8 gap-4">
+      <form className="mx-3 md:px-16 block lg:flex gap-6" onSubmit={handleSubmitEmail}>
+        <div data-aos="fade-up" className="border w-full h-[600px] flex flex-col rounded-xl p-8 gap-4 mb-4 lg:mb-0">
           <div className="flex w-full gap-4">
             <div className="flex flex-col w-1/2">
               <InputWithLabel
@@ -100,7 +100,7 @@ export default function Contact() {
             <Send />
           </div>
         </div>
-        <div data-aos="fade-left" className="w-1/2 rounded-xl flex flex-col gap-4">
+        <div data-aos="fade-up" className="w-full lg:w-1/2 rounded-xl flex flex-col gap-4">
           <div className="border rounded-xl p-4">
             <h4 className="text-xl mb-4">{t("contact.info.title")}</h4>
             <p className="mb-2">{t("contact.info.description")}</p>

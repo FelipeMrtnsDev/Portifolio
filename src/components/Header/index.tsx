@@ -64,8 +64,8 @@ export default function Header() {
 
   return (
     <nav
-      className={`sticky top-4 z-50 ${
-        isMenuClosed ? "w-14" : "w-[768px]"
+      className={`sticky top-4 lg:top-5 md:top-7 z-50 ${
+        isMenuClosed ? "w-14" : "w-full lg:w-[768px] md:w-[640px]"
       } h-20 bg-black mx-auto rounded-full transition-all duration-500`}
     >
       <ul
@@ -177,7 +177,7 @@ export default function Header() {
           </div>
         </div>
       )}
-      <button className="absolute top-3 right-[-80px]">
+      <button className="absolute top-[84px] right-0 lg:right-[-80px] lg:top-4 md:top-4 md:right-[-60px]">
         <ModeToggle />
       </button>
     </nav>

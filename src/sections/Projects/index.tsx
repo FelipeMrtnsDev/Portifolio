@@ -14,14 +14,14 @@ export default function Projects() {
           </span>
         </div>
         <div data-aos="fade-right">
-          <h2 className="text-4xl mt-4 mb-4">
+          <h2 className="text-2xl md:text-4xl mt-4 mb-4">
             {t("projects.title.before")}{" "}
             {t("projects.title.after")}{" "}
             <span className="text-orange-500">{t("projects.title.highlight")}</span>{" "}
           </h2>
         </div>
       </div>
-      <div data-aos="fade-up">
+      <div>
         <Carousel />
       </div>
     </section>

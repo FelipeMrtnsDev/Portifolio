@@ -17,18 +17,18 @@ export default function Home() {
               {t("home.hello")}
             </span>
           </div>
-          <div className="flex mt-12 justify-between items-center">
-            <div
+          <div className="flex flex-col-reverse lg:flex-row md:flex-col-reverse sm:flex-col-reverse mt-12 xl:justify-between lg:justify-evenly md:justify-center items-center">
+          <div
               data-aos="fade-right"
-              className="text-4xl text-black flex flex-col text-center gap-2 font-semibold max-w-[500px] w-full"
+              className="text-4xl text-black flex flex-col text-center gap-2 font-semibold max-w-[500px] w-full mt-4"
             >
-              <h2 className="dark:text-white">{t("home.greeting")}</h2>
+              <h2 className="dark:text-white text-3xl">{t("home.greeting")}</h2>
               <div className="relative w-full mx-auto">
                 <div className="text-7xl font-bold bg-gradient-to-r from-orange-600 via-orange-500 to-orange-400 bg-clip-text text-transparent drop-shadow-md">
                   <TypingEffect />
                 </div>
               </div>
-              <h2 className="dark:text-white">{t("home.role")}</h2>
+              <h2 className="dark:text-white text-3xl">{t("home.role")}</h2>
               <SocialButtons />
             </div>
             <div data-aos="fade-left">
@@ -40,7 +40,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="bg-black absolute bottom-0 px-8 pt-6 rounded-t-[90px] dark:border-x-2 dark:border-t-2">
+        <div className="bg-black hidden lg:flex absolute bottom-0 px-8 pt-6 rounded-t-[90px] dark:border-x-2 dark:border-t-2">
           <div className="flex flex-col text-center items-center w-full h-full">
             <EyesFollower />
             <div className="flex gap-2 mb-2">

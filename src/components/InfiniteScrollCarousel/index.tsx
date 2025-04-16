@@ -29,7 +29,7 @@ const InfiniteScrollCarousel = () => {
         ref={containerRef}
         className="flex gap-8 md:gap-12 w-max"
         animate={{
-          x: ['0%', `-${100 / 3}%`], // Ajuste preciso para o loop
+          x: ['0%', `-${100 / 3}%`], 
         }}
         transition={{
           duration: 40,

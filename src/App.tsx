@@ -16,14 +16,14 @@ function App() {
   useEffect(() => {
     AOS.init({
       duration: 1000,
-      once: false,
+      once: true,
     });
   }, []);
 
   return (
     <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
-      <ToastContainer />
       <Layout>
+        <ToastContainer />
         <Home />
         <About />
         <Projects />

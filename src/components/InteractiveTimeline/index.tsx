@@ -30,7 +30,7 @@ const MilestoneItem = ({ item, index, scrollXProgress, totalItems }: MilestoneIt
 
   return (
     <motion.div
-      className="flex-shrink-0 w-[300px] px-8 snap-center"
+      className="flex-shrink-0 w-[250px] px-8 snap-center"
       style={{ opacity, scale }}
     >
       <div className={`bg-gradient-to-r ${item.color} p-1 rounded-full w-16 h-16 mx-auto mb-4`}>
@@ -42,7 +42,7 @@ const MilestoneItem = ({ item, index, scrollXProgress, totalItems }: MilestoneIt
         <span className="inline-block px-3 py-1 bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-100 rounded-full text-sm mb-2">
           {item.year}
         </span>
-        <h3 className="text-xl font-bold mb-2 text-orange-600 dark:text-orange-400">{item.title}</h3>
+        <h3 className="md:text-xl font-bold mb-2 text-orange-600 dark:text-orange-400">{item.title}</h3>
         <p className="text-gray-600 dark:text-gray-300">{item.description}</p>
       </div>
     </motion.div>
@@ -94,7 +94,7 @@ const InteractiveTimeline = () => {
 
 
   return (
-    <div className="relative h-[400px] mt-20">
+    <div className="relative h-[400px] mt-10 md:mt-20">
       <div className="absolute top-1/2 left-0 right-0 h-1.5">
       </div>
       <div 

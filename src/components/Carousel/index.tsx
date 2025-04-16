@@ -49,7 +49,7 @@ const Carousel = () => {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto py-12">
+    <div className=" max-w-sm xl:max-w-7xl lg:max-w-5xl md:max-w-3xl mx-auto py-12 lg:px-4">
       <Swiper
         modules={[Navigation, Pagination]}
         navigation
@@ -61,14 +61,18 @@ const Carousel = () => {
         className="w-full h-[500px]"
         breakpoints={{
           0: {
-            slidesPerView: 1,
-            spaceBetween: 20
+            slidesPerView: 0,
+            spaceBetween: 80
           },
           768: {
             slidesPerView: 2,
             spaceBetween: 30
           },
           1024: {
+            slidesPerView: 2,
+            spaceBetween: 40
+          },
+          1280: {
             slidesPerView: 3,
             spaceBetween: 40
           }
@@ -76,12 +80,12 @@ const Carousel = () => {
       >
         {cards.map((card) => (
           <SwiperSlide key={card.id}>
-            <div className="h-full bg-white dark:bg-black rounded-xl shadow-lg overflow-hidden border border-gray-200 dark:border-gray-700 transition-all hover:shadow-xl hover:border-orange-400 mx-4"> 
-              <div className="h-48 overflow-hidden">
+            <div className="h-full bg-white dark:bg-black rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 transition-all hover:shadow-xl hover:border-orange-400 mx-4"> 
+              <div className="h-48">
                 <img 
                   src={card.image} 
                   alt={card.title}
-                  className="w-full h-full object-fit transition-transform hover:scale-110 duration-300"
+                  className="w-full h-full object-cover transition-transform"
                 />
               </div>
               <div className="p-6">

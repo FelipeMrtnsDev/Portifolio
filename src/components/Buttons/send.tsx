@@ -35,7 +35,7 @@ const Send = () => {
           justify-content: center;
           border: none;
           border-radius: 8px;
-          overflow: hidden;
+          // overflow: hidden;
           transition: all 0.2s;
           cursor: pointer;
           width: 100%;
