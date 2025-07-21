@@ -66,8 +66,11 @@
     "nexusApp": {
       "description": "Nexus App is an app focused on soft skills development, with activities for personal and professional development."
     },
-    "agendei": {
-      "description": "Agendei is a website that offers the efficiency and full experience of clinical appointments."
+    "NexusWeb": {
+        "description": "Nexus is a web site that furthers the development and mastery of your interpersonal skills."
+    },
+    "ThirdWarNews": {
+      "description": "Third War News is a AI-filtered and simplified war bulletins easy to read for you."
     },
     "button": "View Details"
   },

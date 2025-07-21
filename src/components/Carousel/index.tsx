@@ -8,9 +8,10 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 import eplay from "../../assets/Projects/Screenshot_113.png";
-import Agendei from "../../assets/Projects/Screenshot_110.png";
+import NexusWeb from "../../assets/Projects/Screenshot_311.png"
 import Nexus from "../../assets/Projects/Screenshot_194.png"
 import NexusApp from "../../assets/Projects/Screenshot_195.png"
+import ThirdWarNews from "../../assets/Projects/Screenshot_312.png"
 
 const Carousel = () => {
   const { t } = useTranslation();
@@ -25,6 +26,14 @@ const Carousel = () => {
       link: "https://eplay-one.vercel.app"
     },
     {
+      id: 2,
+      title: "Nexus Web Site",
+      description: t("carousel.NexusWeb.description"),
+      image: NexusWeb,
+      tags: ["Next.js", "Firebase", "TypeScript"],
+      link: "https://nexus-skill.vercel.app"
+    },
+    {
       id: 3,
       title: "Nexus Landing Page",
       description: t("carousel.nexus.description"),
@@ -33,21 +42,21 @@ const Carousel = () => {
       link: "https://nexusskill.vercel.app/?fbclid=PAZXh0bgNhZW0CMTEAAac0v0G0GqnxJE1mPdzF7A-mLw8iwXk8K-J5PoG2RVSqXjSyyJXAJ2qfxWuBnA_aem_LW99nC5tsrP837FPXYi12A"
     },
     {
-      id: 2,
-      title: "Agendei",
-      description: t("carousel.agendei.description"),
-      image: Agendei,
-      tags: ["React.js", "Node.js", "TypeScript"],
-      link: "https://agendei.vercel.app"
-    },
-    {
       id: 4,
       title: "Nexus app",
       description: t("carousel.nexusApp.description"),
       image: NexusApp,
       tags: ["React-native", "Firebase", "TypeScript"],
       link: "https://play.google.com/store/apps/details?id=com.nxs.nexus_skill&pcampaignid=web_share&pli=1"
-    }
+    },
+    {
+      id: 5,
+      title: "ThirdWarNews",
+      description: t("carousel.ThirdWarNews.description"),
+      image: ThirdWarNews,
+      tags: ["Next.js", "Node.js", "Postgress"],
+      link: "https://third-war-news.vercel.app"
+    },
   ];
 
   return (
