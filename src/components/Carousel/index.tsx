@@ -12,6 +12,7 @@ import NexusWeb from "../../assets/Projects/Screenshot_311.png"
 import Nexus from "../../assets/Projects/Screenshot_194.png"
 import NexusApp from "../../assets/Projects/Screenshot_195.png"
 import ThirdWarNews from "../../assets/Projects/Screenshot_312.png"
+import TheDrinker from "../../assets/Projects/Screenshot_316.png"
 
 const Carousel = () => {
   const { t } = useTranslation();
@@ -56,6 +57,14 @@ const Carousel = () => {
       image: ThirdWarNews,
       tags: ["Next.js", "Node.js", "Postgress"],
       link: "https://third-war-news.vercel.app"
+    },
+    {
+      id: 5,
+      title: "The Drinker",
+      description: t("carousel.TheDrinker.description"),
+      image: TheDrinker,
+      tags: ["React.js", "Framer Motion", "Node.js"],
+      link: "https://the-drinker.vercel.app"
     },
   ];
 
