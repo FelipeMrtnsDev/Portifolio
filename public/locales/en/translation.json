@@ -50,6 +50,7 @@
   },
     "projects": {
       "badge": "Projects",
+      "alert": "Backend temporarily down",
       "title": {
         "before": "My",
         "highlight": "projects",

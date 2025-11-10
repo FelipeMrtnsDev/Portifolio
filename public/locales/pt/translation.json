@@ -50,6 +50,7 @@
   },
   "projects": {
     "badge": "Projetos",
+    "alert": "Backend fora do ar temporariamente",
     "title": {
       "before": "Meus",
       "highlight": "projetos",

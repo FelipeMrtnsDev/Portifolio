@@ -7,32 +7,25 @@ import 'swiper/css/effect-cards';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-import eplay from "../../assets/Projects/Screenshot_113.png";
+// import eplay from "../../assets/Projects/Screenshot_113.png";
 import NexusWeb from "../../assets/Projects/Screenshot_311.png"
 import Nexus from "../../assets/Projects/Screenshot_194.png"
 import NexusApp from "../../assets/Projects/Screenshot_195.png"
 import ThirdWarNews from "../../assets/Projects/Screenshot_312.png"
 import TheDrinker from "../../assets/Projects/Screenshot_316.png"
+import { AlertCircle } from 'lucide-react';
 
 const Carousel = () => {
   const { t } = useTranslation();
 
   const cards = [
     {
-      id: 1,
-      title: "Eplay",
-      description: t("carousel.eplay.description"),
-      image: eplay,
-      tags: ["React.js", "Redux", "Node.js"],
-      link: "https://eplay-one.vercel.app"
-    },
-    {
       id: 2,
       title: "Nexus Web Site",
       description: t("carousel.NexusWeb.description"),
       image: NexusWeb,
       tags: ["Next.js", "Firebase", "TypeScript"],
-      link: "https://nexus-skill.vercel.app"
+      link: "https://skill.nxshub.com.br"
     },
     {
       id: 3,
@@ -59,7 +52,7 @@ const Carousel = () => {
       link: "https://third-war-news.vercel.app"
     },
     {
-      id: 5,
+      id: 6,
       title: "The Drinker",
       description: t("carousel.TheDrinker.description"),
       image: TheDrinker,
@@ -115,6 +108,14 @@ const Carousel = () => {
                 <p className="text-gray-600 dark:text-gray-300 mb-4">
                   {card.description}
                 </p>
+                {card.id === 5 ? (
+                  <div className='flex items-center gap-1 mb-1'>
+                    <AlertCircle width={18} color='red' />
+                    <p className='text-sm text-red-500'>{t("projects.alert")}</p>
+                  </div>
+                ) : (
+                  <></>
+                )}
                 <div className="flex flex-wrap gap-2">
                   {card.tags.map((tag) => (
                     <span 
